@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Stylish Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header" onclick="changeHeaderColor()">
+        <div class="container">
+            <h1>A Freelancing Website</h1>
+            <p>A website created by Amit. I,ll help you to created your project on web development. </p>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" onclick="showHome()">Home</a>
+            <a href="#" onclick="showAbout()">About</a>
+            <a href="#" onclick="showServices()">Services</a>
+            <a href="#" class="right" onclick="showContact()">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <aside class="side fade-in" id="homeSection">
+                <h2>About Me</h2>
+                <img src="file:///D:/cu/MCA/Sem1/Web%20Programming%20Lab/Notepad/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="Photo of me" class="profile-image">
+                <p>Hello, I'm Amit, the creator of this website. I am passionate about web development and love to
+                    create engaging and user-friendly experiences. In my free time, I enjoy exploring new technologies and
+                    contributing to open-source projects.</p>
+                <h3>Skills</h3>
+                <div class="skills">
+                    <div class="skill">
+                        <strong>HTML</strong>
+                        <img src="file:///D:/cu/MCA/Sem1/Web%20Programming%20Lab/Notepad/htmlicon.png" alt="HTML" class="skill-icon">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Learn More</a>
+                    </div><br>
+                    <div class="skill">
+                        <strong>CSS</strong>
+                        <img src="file:///D:/cu/MCA/Sem1/Web%20Programming%20Lab/Notepad/cssicon.png" alt="CSS" class="skill-icon">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">Learn More</a>
+                    </div><br>
+                    <div class="skill">
+                        <strong>JavaScript</strong>
+                        <img src="file:///D:/cu/MCA/Sem1/Web%20Programming%20Lab/Notepad/jsicon.png" alt="JavaScript" class="skill-icon">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Learn More</a>
+                    </div><br>
+                    <div class="skill">
+                        <strong>React</strong>
+                        <img src="file:///D:/cu/MCA/Sem1/Web%20Programming%20Lab/Notepad/reacticon.png" alt="React" class="skill-icon">
+                        <a href="https://reactjs.org/" target="_blank">Learn More</a>
+                    </div><br>
+                    <div class="skill">
+                        <strong>Node.js</strong>
+                        <img src="file:///D:/cu/MCA/Sem1/Web%20Programming%20Lab/Notepad/nodejsicon.png" alt="Node.js" class="skill-icon">
+                        <a href="https://nodejs.org/" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </aside>
+            
+            
+            
+            
+
+            <main class="main fade-in" id="mainSection" style="display: none;">
+                <article>
+                    <h2>Welcome to My Website</h2>
+                    <p class="meta">Posted on Nov 11, 2023</p>
+                    <img src="file:///D:/cu/MCA/Sem1/Web%20Programming%20Lab/Notepad/painting-mountain-lake-with-mountain-background_188544-9126.avif" alt="Image" class="main-image">
+                    <p>Welcome to my personal blog where I share my thoughts on web development, technology, and the
+                        ever-evolving world of programming. Stay tuned for regular updates!</p>
+                </article>
+
+                <article>
+                    <h2>Exploring the Latest Technologies</h2>
+                    <p class="meta">Posted on Nov 11, 2023</p>
+                    <img src="file:///D:/cu/MCA/Sem1/Web%20Programming%20Lab/Notepad/pngtree-young-man-cartoon-profile-vector-hd-image-png-image_3238138.jpg" alt="Image" class="main-image">
+                    <p>Join me on a journey through the fascinating world of technology. In this post, we'll delve into
+                        some of the latest trends and innovations shaping the future of the digital landscape.</p>
+                </article>
+            </main>
+
+            <aside class="side fade-in" id="servicesSection" style="display: none;">
+                <h2>Our Services</h2>
+                <p>We offer a range of services to meet your needs. Whether you're looking for:</p>
+                <ul>
+                    <li>Freelancing services</li>
+                    <li>Custom web development projects</li>
+                </ul>
+                <p>Our team of skilled professionals is dedicated to delivering high-quality solutions tailored to your requirements.</p>
+                <p>Contact us to discuss your project and get a quote.</p>
+            </aside>
+
+            <aside class="side fade-in" id="contactSection" style="display: none;">
+                <h2>Contact Us</h2>
+                <p>Have questions or need assistance? Feel free to reach out to us through the following channels:</p>
+                <p>
+                    <strong>Connect with us on social media:</strong><br>
+                    <a href="https://www.facebook.com/YourFacebookPage" target="_blank">Facebook</a> |
+                    <a href="https://www.instagram.com/YourInstagramPage" target="_blank">Instagram</a>
+                </p>
+                <p>
+                    <strong>Call us:</strong><br>
+                    Phone: +123-456-7890
+                </p>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        function changeHeaderColor() {
+            var header = document.querySelector('.header');
+            header.style.backgroundColor = 'red';
+        }
+
+        function showHome() {
+            hideAllSections();
+            document.getElementById('homeSection').style.display = 'block';
+        }
+
+        function showAbout() {
+            hideAllSections();
+            document.getElementById('mainSection').style.display = 'block';
+        }
+
+        function showServices() {
+            hideAllSections();
+            document.getElementById('servicesSection').style.display = 'block';
+        }
+
+        function showContact() {
+            hideAllSections();
+            document.getElementById('contactSection').style.display = 'block';
+        }
+
+        function hideAllSections() {
+            var sections = document.querySelectorAll('.fade-in');
+            sections.forEach(function (section) {
+                section.style.display = 'none';
+            });
+        }
+    </script>
+
+</body>
+
+</html>
